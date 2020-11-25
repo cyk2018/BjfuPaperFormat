@@ -1,5 +1,5 @@
 Attribute VB_Name = "cyk"
-Sub 全文表格添加标题()
+Sub 全文表格设置()
     Dim tbs As Tables, tb As Table
     Set tbs = ActiveDocument.Tables
     n = tbs.Count
@@ -35,16 +35,31 @@ Sub 全文表格添加标题()
         Selection.Font.Size = 10.5
         Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
         Selection.Font.Bold = False
-        
-        For Each C In Selection.Characters
-            If VBA.Asc(C) >= 0 And C.Font.Name <> "Times New Roman" Then
-                C.Font.Name = "Times New Roman"
-            End If
-        Next
-        
+                       
         End If
         
     Next i
     MsgBox "完成所有表格的设置"
 End Sub
 
+Sub 全文图片设置()
+    Dim pics As InlineShapes, pic As InlineShape
+    Set pics = ActiveDocument.InlineShapes
+    n = pics.Count
+    For i = 1 To n
+        Set pic = pics(i)
+        pic.Select
+        If pic.Title = "" Then
+            Selection.MoveRight Count:=2
+            Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        
+            'Selection.MoveRight
+            pictitle = Chr(13) & "图x-x" & " 请输入标题"
+            Selection.TypeText pictitle
+            Selection.ClearFormatting
+            Selection.Font.Name = "宋体"
+            Selection.Font.Size = 10.5
+            Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        End If
+    Next i
+End Sub
