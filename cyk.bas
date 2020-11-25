@@ -126,7 +126,7 @@ Sub 英文全文图片设置()
             Selection.MoveRight Count:=1
             Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
         
-            Selection.MoveDown unit:=wdParagraph, Count:=1, Extend:=wdExtend
+            'Selection.MoveDown unit:=wdParagraph, Count:=1, Extend:=wdExtend
             pictitle = Chr(13) & "Figure x-x" & " Please input the title"
             Selection.TypeText pictitle
             pic.Title = pictitle
