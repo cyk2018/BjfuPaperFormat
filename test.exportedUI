@@ -31,12 +31,14 @@
             <mso:tab idQ="mso:HelpTab" visible="false"/>
             <mso:tab id="mso_c1.168526E8" label="文本" insertBeforeQ="x2:Tab">
                 <mso:group id="mso_c2.168526E8" label="中文标题" imageMso="OpenStartPage" autoScale="true">
+                    <mso:button idQ="x3:全文_0_1695A05F" label="中文章标题" imageMso="AppointmentColor0" onAction="中文章标题" visible="true"/>
                     <mso:button idQ="x3:全文页边距和页眉_0_1695A05F" label="中文一级标题" imageMso="AppointmentColor0" onAction="中文一级标题" visible="true"/>
                     <mso:button idQ="x3:生成页码_2_1695A05F" label="中文二级标题​​" imageMso="AppointmentColor1" onAction="中文二级标题" visible="true"/>
                     <mso:button idQ="x3:全选_1_1695A05F" label="中文三级标题" imageMso="AppointmentColor2" onAction="中文三级标题" visible="true"/>
               
                 </mso:group>
                 <mso:group id="mso_c7.1686708E" label="英文标题" imageMso="AppointmentColorDialog" autoScale="true">
+                    <mso:button idQ="x3:题_5_1695A05F" label="英文章标题​​" imageMso="AppointmentColor0" onAction="英文章标题" visible="true"/>
                     <mso:button idQ="x3:中文大标题_5_1695A05F" label="英文一级标题​​" imageMso="AppointmentColor0" onAction="英文一级标题" visible="true"/>
                     <mso:button idQ="x3:英文大标题_6_1695A05F" label="英文二级标题" imageMso="AppointmentColor1" onAction="英文二级标题" visible="true"/>
                     <mso:button idQ="x3:一级标题_7_1695A05F" label="英文三级标题" imageMso="AppointmentColor2" onAction="英文三级标题" visible="true"/>
@@ -59,34 +61,34 @@
                     <mso:button idQ="x3:作者与导师_中文_24_1695A05F" label="作者与导师_中文" imageMso="Head" onAction="作者与导师_中文" visible="true"/>
                     <mso:button idQ="x3:作者与导师_英文_25_1695A05F" label="作者与导师_英文" imageMso="Head" onAction="作者与导师_英文" visible="true"/>
                 </mso:group>
-                <mso:group id="mso_c1.16EA5F90" label="使用说明书​​" imageMso="AddressBook" autoScale="true">
-                    <mso:button idQ="x3:说明书_0_176127E3" label="说明书​​" imageMso="AddressBook" onAction="说明书" visible="true"/>
+                <mso:group id="mso_c1.16EA5F90" label="页眉页脚" imageMso="AddressBook" autoScale="true">
+                    <mso:button idQ="x3:说明书_0_176127E3" label="插入页眉页脚​​" imageMso="AddressBook" onAction="插入页眉页脚" visible="true"/>
                 </mso:group>
             </mso:tab>
             <mso:tab id="mso_c1.16E6C562" label="图表" insertBeforeQ="x2:Tab">
-                <mso:group id="mso_c10.168E92C5" label="表格​​" imageMso="BlackAndWhite" autoScale="true">
-                    <mso:button idQ="x3:全文表格添加标题_20_1695A05F" label="中文全文表格设置" imageMso="OutlineSubtotals" onAction="中文全文表格设置" visible="true"/>
-                    <mso:button idQ="x3:全文图片添加标题_0_16D072E8" label="英文全文表格设置" imageMso="OutlineSubtotals" onAction="英文全文表格设置" visible="true"/>
-                    <!-- <mso:button idQ="x3:全文表格设置_22_1695A05F" label="全文表格格式设置" imageMso="DesignXml" onAction="全文表格设置" visible="true"/>
-                    <mso:button idQ="x3:表格设置_23_1695A05F" label="设置表格格式" imageMso="ViewSlideSorterView" onAction="表格设置" visible="true"/>
-                    <mso:button idQ="x3:表标题_图标题_0_16987BF1" label="表/图_标题格式" imageMso="_3DStyle" onAction="表标题_图标题" visible="true"/> -->
+                <mso:group id="mso_c10.168E92C5" label="中文全文表格设置​​" imageMso="BlackAndWhite" autoScale="true">
+                    <mso:button idQ="x3:全文表格添加标题_20_1695A05F" label="表格边框设置" imageMso="OutlineSubtotals" onAction="表格边框设置" visible="true"/>
+                    <mso:button idQ="x3:全文图片添加标题_0_16D072E8" label="表格字体设置" imageMso="PictureReflectionGalleryItem" onAction="表格字体设置" visible="true"/>
+                    <mso:button idQ="x3:全文表格设置_22_1695A05F" label="表格标题设置" imageMso="DesignXml" onAction="表格标题设置" visible="true"/>
+                    <!-- <mso:button idQ="x3:表格设置_23_1695A05F" label="设置表格格式" imageMso="ViewSlideSorterView" onAction="表格设置" visible="true"/>
+                    <mso:button idQ="x3:表标题_图标题_0_16987BF1" label="表/图_标题格式" imageMso="_3DStyle" onAction="表标题_图标题" visible="true"/>  -->
                 </mso:group>
-                <mso:group id="mso_c15.16929419" label="图片设置" imageMso="SignatureShow" autoScale="true">
-                    <mso:button idQ="x3:首行缩进快捷键_1_1A9F8BF7" label="中文全文图片设置" imageMso="PictureReflectionGalleryItem" onAction="中文全文图片设置" visible="true"/>
-                    <mso:button idQ="x3:全文英文使用新罗马字体_33_1695A05F" label="英文全文图片设置" imageMso="PictureReflectionGalleryItem" onAction="英文全文图片设置" visible="true"/>
-                    <!-- <mso:button idQ="x3:删除空格_34_1695A05F" label="删除空格​​" imageMso="Delete" onAction="删除空格" visible="true"/>
-                    <mso:button idQ="x3:插入分页符_30_1695A05F" label="插入分页符​​" imageMso="ShapesDuplicate" onAction="插入分页符" visible="true"/>
+                <mso:group id="mso_c15.16929419" label="英文全文图片设置" imageMso="SignatureShow" autoScale="true">
+                    <mso:button idQ="x3:首行缩进快捷键_1_1A9F8BF7" label="表格边框设置" imageMso="ViewGoForward" onAction="表格边框设置" visible="true"/>
+                    <mso:button idQ="x3:全文英文使用新罗马字体_33_1695A05F" label="表格字体设置" imageMso="CharacterShading" onAction="表格字体设置" visible="true"/>
+                    <mso:button idQ="x3:删除空格_34_1695A05F" label="表格标题设置" imageMso="Delete" onAction="表格标题设置" visible="true"/>
+                    <!-- <mso:button idQ="x3:插入分页符_30_1695A05F" label="插入分页符​​" imageMso="ShapesDuplicate" onAction="插入分页符" visible="true"/>
                     <mso:button idQ="x3:插入分节符_31_1695A05F" label="插入分节符​​" imageMso="WindowsCascade" onAction="插入分节符" visible="true"/>
                     <mso:button idQ="x3:插入脚注_0_19C73A38" label="插入脚注​​" imageMso="Pushpin" onAction="插入脚注" visible="true"/> -->
                 </mso:group>
-                <!-- <mso:group id="mso_c16.1694E954" label="关于本插件​​" imageMso="Head" autoScale="true">
-                    <mso:button idQ="x3:作者_36_1695A05F" label="作者与版本​​" imageMso="HappyFace" onAction="作者" visible="true"/>
-                    <mso:button idQ="x3:访问网站_1_19C73A38" label="访问网站​​" imageMso="AnimationOnClick" onAction="访问网站" visible="true"/>
-                    <mso:button idQ="x3:说明书_0_19C8B07D" label="使用说明书​​" imageMso="AddressBook" onAction="说明书" visible="true"/>
-                    <mso:button idQ="x3:使用快捷键_0_1AAC9946" label="使用快捷键​​" imageMso="MailMergeResultsPreview" onAction="使用快捷键" visible="true"/>
-                </mso:group> -->
+                <mso:group id="mso_c16.1694E954" label="中英文文全文图片设置" imageMso="Head" autoScale="true">
+                    <mso:button idQ="x3:作者_36_1695A05F" label="中文图片居中放置" imageMso="HappyFace" onAction="中文图片居中放置" visible="true"/>
+                    <mso:button idQ="x3:访问网站_1_19C73A38" label="中文图片标题设置" imageMso="AnimationOnClick" onAction="中文图片标题设置" visible="true"/>
+                    <mso:button idQ="x3:说明书_0_19C8B07D" label="英文图片居中放置" imageMso="AddressBook" onAction="英文图片居中放置" visible="true"/>
+                    <mso:button idQ="x3:使用快捷键_0_1AAC9946" label="英文图片标题设置" imageMso="MailMergeResultsPreview" onAction="英文图片标题设置" visible="true"/>
+                </mso:group>
             </mso:tab>
-            <mso:tab id="mso_c1.1B9F867C" label="向导模式​​" insertBeforeQ="x2:Tab">
+            <!-- <mso:tab id="mso_c1.1B9F867C" label="向导模式​​" insertBeforeQ="x2:Tab">
                 <mso:group id="mso_c1.1BA267AB" label="P0  开始" imageMso="DataGraphicIconSet" autoScale="true">
                     <mso:button idQ="x3:遍历段落快捷键_0_1BA4B9C8" label="执行​​" imageMso="DataGraphicIconSet" onAction="遍历段落快捷键" visible="true"/>
                     <mso:button idQ="x3:全文页边距和页眉_0_1B9B8F78" label="全文页边距和页眉" imageMso="ShowClipboard" onAction="全文页边距和页眉" visible="true"/>
@@ -128,7 +130,7 @@
                 <mso:group id="mso_c1.1BA6E3BD" label="使用说明​​" imageMso="DataGraphicIconSet" autoScale="true">
                     <mso:button idQ="x3:向导模式说明书_0_1C0F2725" label="关于向导​​" imageMso="SmartArtChangeColorsGallery" onAction="向导模式说明书" visible="true"/>
                 </mso:group>
-            </mso:tab>
+            </mso:tab> -->
             <mso:tab idQ="x2:Tab" visible="false"/>
             <mso:tab idQ="x1:ACROBAT_RIBBON" visible="false"/>
         </mso:tabs>
