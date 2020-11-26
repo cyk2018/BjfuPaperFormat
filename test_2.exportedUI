@@ -7,28 +7,6 @@
     <mso:ribbon>
         <mso:qat/>
         <mso:tabs>
-            <mso:tab idQ="mso:TabBlogPost" visible="false"/>
-            <mso:tab idQ="mso:TabBlogInsert" visible="false"/>
-            <mso:tab idQ="mso:TabOutlining" visible="false"/>
-            <mso:tab idQ="mso:TabBackgroundRemoval" visible="false"/>
-            <mso:tab idQ="mso:TabHome">
-                <mso:group idQ="x1:ACROBAT_SHARE" visible="false"/>
-            </mso:tab>
-            <mso:tab idQ="mso:TabInsert">
-                <mso:group id="mso_c3.B53A36F" label="分节分页符​​" imageMso="VisibilityHidden" autoScale="true">
-                    <mso:gallery idQ="mso:BreaksGallery" showInRibbon="false" visible="true"/>
-                </mso:group>
-                <mso:group idQ="mso:GroupMedia" visible="false"/>
-            </mso:tab>
-            <mso:tab idQ="mso:TabMailings">
-                <mso:group idQ="x1:ACROBAT_MMERGE" visible="false"/>
-            </mso:tab>
-            <mso:tab idQ="mso:TabView">
-                <mso:group idQ="mso:GroupMacros" visible="false"/>
-                <mso:group idQ="mso:GroupSharePointProperties" visible="false"/>
-            </mso:tab>
-            <mso:tab idQ="mso:TabAddIns" visible="false"/>
-            <mso:tab idQ="mso:HelpTab" visible="false"/>
             <mso:tab id="mso_c1.168526E8" label="文本" insertBeforeQ="x2:Tab">
                 <mso:group id="mso_c2.168526E8" label="中文标题" imageMso="OpenStartPage" autoScale="true">
                     <mso:button idQ="x3:全文_0_1695A05F" label="中文章标题" imageMso="AutoFormat" onAction="中文章标题" visible="true"/>
