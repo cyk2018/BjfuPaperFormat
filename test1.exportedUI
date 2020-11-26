@@ -67,24 +67,24 @@
                 <mso:group id="mso_c10.168E92C5" label="表格​​" imageMso="BlackAndWhite" autoScale="true">
                     <mso:button idQ="x3:全文表格添加标题_20_1695A05F" label="中文全文表格设置" imageMso="OutlineSubtotals" onAction="中文全文表格设置" visible="true"/>
                     <mso:button idQ="x3:全文图片添加标题_0_16D072E8" label="英文全文表格设置" imageMso="PictureReflectionGalleryItem" onAction="英文全文表格设置" visible="true"/>
-                    <!-- <mso:button idQ="x3:全文表格设置_22_1695A05F" label="全文表格格式设置" imageMso="DesignXml" onAction="全文表格设置" visible="true"/>
+                    <mso:button idQ="x3:全文表格设置_22_1695A05F" label="全文表格格式设置" imageMso="DesignXml" onAction="全文表格设置" visible="true"/>
                     <mso:button idQ="x3:表格设置_23_1695A05F" label="设置表格格式" imageMso="ViewSlideSorterView" onAction="表格设置" visible="true"/>
-                    <mso:button idQ="x3:表标题_图标题_0_16987BF1" label="表/图_标题格式" imageMso="_3DStyle" onAction="表标题_图标题" visible="true"/> -->
+                    <mso:button idQ="x3:表标题_图标题_0_16987BF1" label="表/图_标题格式" imageMso="_3DStyle" onAction="表标题_图标题" visible="true"/>
                 </mso:group>
                 <mso:group id="mso_c15.16929419" label="图片设置" imageMso="SignatureShow" autoScale="true">
                     <mso:button idQ="x3:首行缩进快捷键_1_1A9F8BF7" label="中文全文图片设置" imageMso="ViewGoForward" onAction="中文全文图片设置" visible="true"/>
                     <mso:button idQ="x3:全文英文使用新罗马字体_33_1695A05F" label="英文全文图片设置" imageMso="CharacterShading" onAction="英文全文图片设置" visible="true"/>
-                    <!-- <mso:button idQ="x3:删除空格_34_1695A05F" label="删除空格​​" imageMso="Delete" onAction="删除空格" visible="true"/>
+                    <mso:button idQ="x3:删除空格_34_1695A05F" label="删除空格​​" imageMso="Delete" onAction="删除空格" visible="true"/>
                     <mso:button idQ="x3:插入分页符_30_1695A05F" label="插入分页符​​" imageMso="ShapesDuplicate" onAction="插入分页符" visible="true"/>
                     <mso:button idQ="x3:插入分节符_31_1695A05F" label="插入分节符​​" imageMso="WindowsCascade" onAction="插入分节符" visible="true"/>
-                    <mso:button idQ="x3:插入脚注_0_19C73A38" label="插入脚注​​" imageMso="Pushpin" onAction="插入脚注" visible="true"/> -->
+                    <mso:button idQ="x3:插入脚注_0_19C73A38" label="插入脚注​​" imageMso="Pushpin" onAction="插入脚注" visible="true"/>
                 </mso:group>
-                <!-- <mso:group id="mso_c16.1694E954" label="关于本插件​​" imageMso="Head" autoScale="true">
+                <mso:group id="mso_c16.1694E954" label="关于本插件​​" imageMso="Head" autoScale="true">
                     <mso:button idQ="x3:作者_36_1695A05F" label="作者与版本​​" imageMso="HappyFace" onAction="作者" visible="true"/>
                     <mso:button idQ="x3:访问网站_1_19C73A38" label="访问网站​​" imageMso="AnimationOnClick" onAction="访问网站" visible="true"/>
                     <mso:button idQ="x3:说明书_0_19C8B07D" label="使用说明书​​" imageMso="AddressBook" onAction="说明书" visible="true"/>
                     <mso:button idQ="x3:使用快捷键_0_1AAC9946" label="使用快捷键​​" imageMso="MailMergeResultsPreview" onAction="使用快捷键" visible="true"/>
-                </mso:group> -->
+                </mso:group>
             </mso:tab>
             <mso:tab id="mso_c1.1B9F867C" label="向导模式​​" insertBeforeQ="x2:Tab">
                 <mso:group id="mso_c1.1BA267AB" label="P0  开始" imageMso="DataGraphicIconSet" autoScale="true">
