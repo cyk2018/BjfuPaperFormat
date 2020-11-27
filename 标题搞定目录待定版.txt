@@ -12,6 +12,7 @@ Sub 中文章标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 18
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphCenter
         .LineUnitBefore = 0
@@ -51,6 +52,7 @@ Sub 中文一级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
@@ -91,6 +93,7 @@ Sub 中文二级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
@@ -131,6 +134,7 @@ Sub 中文三级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
@@ -170,6 +174,7 @@ Sub 英文章标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 18
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphCenter
         .LineUnitBefore = 0
@@ -209,6 +214,7 @@ Sub 英文一级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
@@ -249,6 +255,7 @@ Sub 英文二级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
@@ -289,6 +296,7 @@ Sub 英文三级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
@@ -335,7 +343,8 @@ Sub 目录()
     Set myRange = ActiveDocument.Range(Start:=0, End:=0)
     ActiveDocument.TablesOfContents.Add Range:=myRange, _
     UseFields:=False, UseHeadingStyles:=True, _
-    LowerHeadingLevel:=3, _
-    UpperHeadingLevel:=1
+    LowerHeadingLevel:=4, _
+    UpperHeadingLevel:=1, _
+    UseHyperlinks:=True
 End Sub
 
