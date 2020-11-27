@@ -570,5 +570,23 @@ Sub 摘要()
     Selection.EndKey
     Selection.TypeText Chr(13)
 End Sub
-
+Sub 创建文档还原点()
+    On Error GoTo msg
+    ActiveDocument.Save
+    FName = ActiveDocument.Name
+    strs = Split(FName, ".")
+    For i = LBound(strs, 1) To (UBound(strs, 1) - 1)
+        myname = myname & strs(i) & "."
+    Next i
+    endformat = strs(UBound(strs, 1))
+    timenow = Format(Now, "(还原点yyyy-mm-dd_hh'mm'ss)")
+    savename = timenow & myname & endformat
+    fpath = ActiveDocument.Path
+    ActiveDocument.SaveAs2 fpath & "\" & savename
+Documents.Open (fpath & "\" & FName)
+    MsgBox "完成！" & Chr(13) & "还原点位于该文档所在文件夹"
+    Exit Sub
+msg:
+    MsgBox "出了点问题，请检查后重试  >_<", Title:="Error", buttons:=vbCritical
+End Sub
 
