@@ -1,37 +1,36 @@
-Attribute VB_Name = "realword"
-Sub ÖĞÎÄÈ«ÎÄ±í¸ñÉèÖÃ()
+Sub ä¸­æ–‡å…¨æ–‡è¡¨æ ¼è®¾ç½®()
     Dim tbs As Tables, tb As Table
     Set tbs = ActiveDocument.Tables
     n = tbs.Count
     For i = 1 To n
         Set tb = tbs(i)
-        'Ñ¡ÖĞ±í¸ñ
+        'é€‰ä¸­è¡¨æ ¼
         tb.Select
-        'ÉèÖÃ±í¸ñµÄ¸ñÊ½
+        'è®¾ç½®è¡¨æ ¼çš„æ ¼å¼
         'If tb.Title = "" Then
         
-        'ÉèÖÃÄÚÍâ±ß¿ò
+        'è®¾ç½®å†…å¤–è¾¹æ¡†
         tb.Borders.InsideLineStyle = wdLineStyleSingle
         tb.Borders.InsideLineWidth = wdLineWidth050pt
         tb.Borders.OutsideLineStyle = wdLineStyleSingle
         tb.Borders.OutsideLineWidth = wdLineWidth050pt
         
-        tb.Style.Font.Name = "ËÎÌå"
+        tb.Style.Font.Name = "å®‹ä½“"
         tb.Style.Font.Size = 10.5
         tb.Style.Font.NameAscii = "Times New Roman"
         
         
-        '±êÌâÉèÖÃ
+        'æ ‡é¢˜è®¾ç½®
         
         Selection.MoveLeft Count:=2
-        tabletitle = Chr(13) & "±í " & "x-x ÇëÊäÈë±êÌâ"
+        tabletitle = Chr(13) & "è¡¨ " & "x-x è¯·è¾“å…¥æ ‡é¢˜"
         Selection.TypeText tabletitle
         'tb.Title = tabletitle
         Selection.MoveUp unit:=wdParagraph, Count:=1, Extend:=wdExtend
         Selection.ClearFormatting
         
-        '±íÌâ²ÉÓÃËÎÌåÎåºÅ
-        Selection.Font.Name = "ËÎÌå"
+        'è¡¨é¢˜é‡‡ç”¨å®‹ä½“äº”å·
+        Selection.Font.Name = "å®‹ä½“"
         Selection.Font.Size = 10.5
         Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
         Selection.ParagraphFormat.SpaceBefore = 12
@@ -41,31 +40,31 @@ Sub ÖĞÎÄÈ«ÎÄ±í¸ñÉèÖÃ()
         'End If
         
     Next i
-    MsgBox "ÇëÊÖ¶¯ÊäÈë±êÌâ"
+    MsgBox "è¯·æ‰‹åŠ¨è¾“å…¥æ ‡é¢˜"
 End Sub
-Sub Ó¢ÎÄÈ«ÎÄ±í¸ñÉèÖÃ()
+Sub è‹±æ–‡å…¨æ–‡è¡¨æ ¼è®¾ç½®()
     Dim tbs As Tables, tb As Table
     Set tbs = ActiveDocument.Tables
     n = tbs.Count
     For i = 1 To n
         Set tb = tbs(i)
-        'Ñ¡ÖĞ±í¸ñ
+        'é€‰ä¸­è¡¨æ ¼
         tb.Select
-        'ÉèÖÃ±í¸ñµÄ¸ñÊ½
+        'è®¾ç½®è¡¨æ ¼çš„æ ¼å¼
         'If tb.Title = "" Then
         
-        'ÉèÖÃÄÚÍâ±ß¿ò
+        'è®¾ç½®å†…å¤–è¾¹æ¡†
         tb.Borders.InsideLineStyle = wdLineStyleSingle
         tb.Borders.InsideLineWidth = wdLineWidth050pt
         tb.Borders.OutsideLineStyle = wdLineStyleSingle
         tb.Borders.OutsideLineWidth = wdLineWidth050pt
         
-        tb.Style.Font.Name = "ËÎÌå"
+        tb.Style.Font.Name = "å®‹ä½“"
         tb.Style.Font.Size = 10.5
         tb.Style.Font.NameAscii = "Times New Roman"
         
         
-        '±êÌâÉèÖÃ
+        'æ ‡é¢˜è®¾ç½®
         
         Selection.MoveLeft Count:=2
         tabletitle = Chr(13) & "Table" & " x-x Please input the title"
@@ -74,7 +73,7 @@ Sub Ó¢ÎÄÈ«ÎÄ±í¸ñÉèÖÃ()
         Selection.MoveUp unit:=wdParagraph, Count:=1, Extend:=wdExtend
         Selection.ClearFormatting
         
-        '±íÌâ²ÉÓÃËÎÌåÎåºÅ
+        'è¡¨é¢˜é‡‡ç”¨å®‹ä½“äº”å·
         Selection.Font.Name = "Times New Roman"
         Selection.Font.Size = 10.5
         Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
@@ -89,7 +88,7 @@ Sub Ó¢ÎÄÈ«ÎÄ±í¸ñÉèÖÃ()
     MsgBox "Please enter the title manually"
 End Sub
 
-Sub ÖĞÎÄÈ«ÎÄÍ¼Æ¬ÉèÖÃ()
+Sub ä¸­æ–‡å…¨æ–‡å›¾ç‰‡è®¾ç½®()
     Dim pics As InlineShapes, pic As InlineShape
     Set pics = ActiveDocument.InlineShapes
     n = pics.Count
@@ -101,11 +100,11 @@ Sub ÖĞÎÄÈ«ÎÄÍ¼Æ¬ÉèÖÃ()
             Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
         
             'Selection.MoveRight
-            pictitle = Chr(13) & "Í¼ x-x" & " ÇëÊäÈë±êÌâ"
+            pictitle = Chr(13) & "å›¾ x-x" & " è¯·è¾“å…¥æ ‡é¢˜"
             Selection.TypeText pictitle
             'pic.Title = pictitle
             Selection.ClearFormatting
-            Selection.Font.Name = "ËÎÌå"
+            Selection.Font.Name = "å®‹ä½“"
             Selection.Font.Size = 10.5
             Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
             
@@ -113,9 +112,9 @@ Sub ÖĞÎÄÈ«ÎÄÍ¼Æ¬ÉèÖÃ()
             Selection.ParagraphFormat.SpaceAfter = 12
        ' End If
     Next i
-    MsgBox "ÇëÊÖ¶¯ÊäÈë±êÌâ"
+    MsgBox "è¯·æ‰‹åŠ¨è¾“å…¥æ ‡é¢˜"
 End Sub
-Sub Ó¢ÎÄÈ«ÎÄÍ¼Æ¬ÉèÖÃ()
+Sub è‹±æ–‡å…¨æ–‡å›¾ç‰‡è®¾ç½®()
     Dim pics As InlineShapes, pic As InlineShape
     Set pics = ActiveDocument.InlineShapes
     n = pics.Count
@@ -143,10 +142,10 @@ Sub Ó¢ÎÄÈ«ÎÄÍ¼Æ¬ÉèÖÃ()
 End Sub
 
 
-Sub È«ÎÄÒ³±ß¾àºÍÒ³Ã¼_Ò³½Å¸ñÊ½()
-response = MsgBox("¡¾ÖØÒªÌáÊ¾¡¿" & Chr(13) & "È·ÈÏºó»á¸²¸ÇÒÑĞŞ¸ÄµÄÒ³Ã¼" & Chr(13) & "Çë½÷É÷µã»÷È·¶¨", buttons:=vbOKCancel + vbDefaultButton2)
+Sub å…¨æ–‡é¡µè¾¹è·å’Œé¡µçœ‰_é¡µè„šæ ¼å¼()
+response = MsgBox("ã€é‡è¦æç¤ºã€‘" & Chr(13) & "ç¡®è®¤åä¼šè¦†ç›–å·²ä¿®æ”¹çš„é¡µçœ‰" & Chr(13) & "è¯·è°¨æ…ç‚¹å‡»ç¡®å®š", buttons:=vbOKCancel + vbDefaultButton2)
     If response = 1 Then
-        response = MsgBox("¡¾ÔÙ´ÎÈ·ÈÏ¡¿" & Chr(13) & "ÄãÈ·¶¨ĞŞ¸ÄÂğ£¿", buttons:=vbOKCancel + vbDefaultButton2)
+        response = MsgBox("ã€å†æ¬¡ç¡®è®¤ã€‘" & Chr(13) & "ä½ ç¡®å®šä¿®æ”¹å—ï¼Ÿ", buttons:=vbOKCancel + vbDefaultButton2)
         If response <> 1 Then
             Exit Sub
         End If
@@ -154,7 +153,7 @@ response = MsgBox("¡¾ÖØÒªÌáÊ¾¡¿" & Chr(13) & "È·ÈÏºó»á¸²¸ÇÒÑĞŞ¸ÄµÄÒ³Ã¼" & Chr(13
         Exit Sub
     End If
 
-    Selection.WholeStory 'ÉèÖÃÒ³±ß¾à
+    Selection.WholeStory 'è®¾ç½®é¡µè¾¹è·
     With ActiveDocument.PageSetup
         .TopMargin = CentimetersToPoints(3)
         .BottomMargin = CentimetersToPoints(3)
@@ -163,52 +162,52 @@ response = MsgBox("¡¾ÖØÒªÌáÊ¾¡¿" & Chr(13) & "È·ÈÏºó»á¸²¸ÇÒÑĞŞ¸ÄµÄÒ³Ã¼" & Chr(13
     End With
     Selection.ParagraphFormat.LineSpacingRule = wdLineSpace1pt5
 
-    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader 'ÉèÖÃÒ³Ã¼
+    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader 'è®¾ç½®é¡µçœ‰
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
     Selection.Delete
-    Selection.TypeText Text:="µç×Ó¿Æ¼¼´óÑ§Ñ§Ê¿Ñ§Î»ÂÛÎÄ"
+    Selection.TypeText Text:="ç”µå­ç§‘æŠ€å¤§å­¦å­¦å£«å­¦ä½è®ºæ–‡"
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
-    Selection.Font.Name = "ËÎÌå"
+    Selection.Font.Name = "å®‹ä½“"
     Selection.Font.Size = 10.5
 
 ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageFooter
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
-    Selection.Delete '½øĞĞ¸üĞÂÉ¾³ı
+    Selection.Delete 'è¿›è¡Œæ›´æ–°åˆ é™¤
     Selection.TypeText Text:=""
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
-    Selection.Font.Name = "ËÎÌå"
+    Selection.Font.Name = "å®‹ä½“"
     Selection.Font.Size = 10.5
     
-    Selection.PageSetup.HeaderDistance = 56.6 ' ÉèÖÃÒ³Ã¼µ½Ò³Ãæµ×±ßµÄ¾àÀë
-    Selection.PageSetup.FooterDistance = 56.6 ' ÉèÖÃÒ³½Åµ½Ò³Ãæµ×±ßµÄ¾àÀë
+    Selection.PageSetup.HeaderDistance = 56.6 ' è®¾ç½®é¡µçœ‰åˆ°é¡µé¢åº•è¾¹çš„è·ç¦»
+    Selection.PageSetup.FooterDistance = 56.6 ' è®¾ç½®é¡µè„šåˆ°é¡µé¢åº•è¾¹çš„è·ç¦»
     ActiveWindow.ActivePane.View.SeekView = wdSeekMainDocument
     Selection.HomeKey
-    MsgBox "Íê³É£¡"
+    MsgBox "å®Œæˆï¼"
 End Sub
 
-Sub Ó¢ÎÄÊı×Ö_Ò³Ã¼¸ñÊ½()
+Sub è‹±æ–‡æ•°å­—_é¡µçœ‰æ ¼å¼()
      If Selection.Type = wdSelectionIP Then
         Selection.Expand unit:=wdParagraph
     ElseIf Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÎÄ×Ö£¡"
+        MsgBox "è¯·é€‰å®šæ–‡å­—ï¼"
         Exit Sub
     End If
-    response = MsgBox("´Ë²Ù×÷ÓÃÓÚÉèÖÃÓ¢ÎÄÊı×ÖÒ³Ã¼µÄ¸ñÊ½" & Chr(13), buttons:=vbOKCancel + vbDefaultButton2)
+    response = MsgBox("æ­¤æ“ä½œç”¨äºè®¾ç½®è‹±æ–‡æ•°å­—é¡µçœ‰çš„æ ¼å¼" & Chr(13), buttons:=vbOKCancel + vbDefaultButton2)
     If response <> 1 Then
             Exit Sub
     End If
-    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader 'ÉèÖÃÒ³Ã¼
+    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader 'è®¾ç½®é¡µçœ‰
     Selection.Font.Name = "Times New Roman"
     Selection.Font.Size = 10.5
     ActiveWindow.ActivePane.View.SeekView = wdSeekMainDocument
 End Sub
 
 
-Sub È«ÎÄÓ¢ÎÄÊ¹ÓÃĞÂÂŞÂí×ÖÌå()
+Sub å…¨æ–‡è‹±æ–‡ä½¿ç”¨æ–°ç½—é©¬å­—ä½“()
     On Error GoTo msg
     Dim ps As Paragraphs
     Set ps = ActiveDocument.Paragraphs
@@ -220,42 +219,42 @@ Sub È«ÎÄÓ¢ÎÄÊ¹ÓÃĞÂÂŞÂí×ÖÌå()
             End If
         Next
     Next
-    MsgBox "Íê³É£¡"
+    MsgBox "å®Œæˆï¼"
     Exit Sub
 msg:
-    MsgBox "³öÁËµãÎÊÌâ£¬Çë¼ì²éºóÖØÊÔ  >_<", Title:="Error", buttons:=vbCritical
+    MsgBox "å‡ºäº†ç‚¹é—®é¢˜ï¼Œè¯·æ£€æŸ¥åé‡è¯•  >_<", Title:="Error", buttons:=vbCritical
 End Sub
 
-Sub ÕıÎÄ_ÖĞÎÄ()
+Sub æ­£æ–‡_ä¸­æ–‡()
     If Selection.Type = wdSelectionIP Then
         Selection.Expand unit:=wdParagraph
     ElseIf Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÎÄ×Ö£¡"
+        MsgBox "è¯·é€‰å®šæ–‡å­—ï¼"
         Exit Sub
     End If
     Selection.ClearFormatting
-    Selection.Font.Name = "ËÎÌå"
+    Selection.Font.Name = "å®‹ä½“"
     Selection.Font.Size = 12
     Selection.Font.Bold = False
     Selection.ParagraphFormat.LineSpacingRule = wdLineSpaceExactly
-    Selection.ParagraphFormat.LineSpacing = 20 '¹Ì¶¨ĞĞ¾à20°õ
+    Selection.ParagraphFormat.LineSpacing = 20 'å›ºå®šè¡Œè·20ç£…
     With Selection.ParagraphFormat
         .SpaceBefore = 0
         .SpaceBeforeAuto = False
         .SpaceAfter = 0
         .SpaceAfterAuto = False
         '.LineSpacingRule = wdLineSpace1pt5
-        .CharacterUnitFirstLineIndent = 2 'Ê×ĞĞËõ½øÁ½×Ö·û
+        .CharacterUnitFirstLineIndent = 2 'é¦–è¡Œç¼©è¿›ä¸¤å­—ç¬¦
         .OutlineLevel = wdOutlineLevelBodyText
         .LineUnitBefore = 0
         .LineUnitAfter = 0
     End With
 End Sub
-Sub ÕıÎÄ_Ó¢ÎÄ()
+Sub æ­£æ–‡_è‹±æ–‡()
     If Selection.Type = wdSelectionIP Then
         Selection.Expand unit:=wdParagraph
     ElseIf Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨Ó¢ÎÄ£¡"
+        MsgBox "è¯·é€‰å®šè‹±æ–‡ï¼"
         Exit Sub
     End If
     Selection.ClearFormatting
@@ -271,17 +270,17 @@ Sub ÕıÎÄ_Ó¢ÎÄ()
         .SpaceAfter = 0
         .SpaceAfterAuto = False
         '.LineSpacingRule = wdLineSpace1pt5
-        .CharacterUnitFirstLineIndent = 2 'Ê×ĞĞËõ½øÁ½×Ö·û
+        .CharacterUnitFirstLineIndent = 2 'é¦–è¡Œç¼©è¿›ä¸¤å­—ç¬¦
         .OutlineLevel = wdOutlineLevelBodyText
         .LineUnitBefore = 0
         .LineUnitAfter = 0
     End With
 End Sub
 
-Sub Éú³ÉÒ³Âë()
-    response = MsgBox("¡¾ÖØÒªÌáÊ¾¡¿" & Chr(13) & "ÇëÈ·±£¹â±êÎ»ÓÚµÚÒ»ÕÂµÄÒ»¼¶±êÌâÇ°" & Chr(13) & "ÔÙµã»÷[È·¶¨]  ·ñÔòµã»÷[È¡Ïû]", buttons:=vbOKCancel + vbDefaultButton2)
+Sub ç”Ÿæˆé¡µç ()
+    response = MsgBox("ã€é‡è¦æç¤ºã€‘" & Chr(13) & "è¯·ç¡®ä¿å…‰æ ‡ä½äºç¬¬ä¸€ç« çš„ä¸€çº§æ ‡é¢˜å‰" & Chr(13) & "å†ç‚¹å‡»[ç¡®å®š]  å¦åˆ™ç‚¹å‡»[å–æ¶ˆ]", buttons:=vbOKCancel + vbDefaultButton2)
     If response = 1 Then
-        response = MsgBox("¡¾ÔÙ´ÎÈ·ÈÏ¡¿" & Chr(13) & "ÎÒÈ·ÈÏ¹â±êÎ»ÓÚÕıÈ·Î»ÖÃ", buttons:=vbOKCancel + vbDefaultButton2)
+        response = MsgBox("ã€å†æ¬¡ç¡®è®¤ã€‘" & Chr(13) & "æˆ‘ç¡®è®¤å…‰æ ‡ä½äºæ­£ç¡®ä½ç½®", buttons:=vbOKCancel + vbDefaultButton2)
         If response <> 1 Then
             Exit Sub
         End If
@@ -294,7 +293,7 @@ Sub Éú³ÉÒ³Âë()
     With ActiveDocument.Sections(1)
         .Footers(wdHeaderFooterPrimary).PageNumbers.Add PageNumberAlignment:=wdAlignPageNumberCenter, FirstPage:=True
         .Footers(wdHeaderFooterPrimary).PageNumbers.StartingNumber = 1
-        .Footers(wdHeaderFooterPrimary).PageNumbers.NumberStyle = wdPageNumberStyleUppercaseRoman 'µÚÒ»ÕÂÖ®Ç°ÓÃĞÂÂŞÂí×ÖÌå
+        .Footers(wdHeaderFooterPrimary).PageNumbers.NumberStyle = wdPageNumberStyleUppercaseRoman 'ç¬¬ä¸€ç« ä¹‹å‰ç”¨æ–°ç½—é©¬å­—ä½“
         .Footers(wdHeaderFooterPrimary).Range.Font.Name = "Times New Roman"
         .Footers(wdHeaderFooterPrimary).Range.Font.Size = 9
         '.Headers(1).Range.ParagraphFormat.Borders(3).LineStyle = wdLineStyleNone
@@ -308,11 +307,11 @@ Sub Éú³ÉÒ³Âë()
         .Footers(wdHeaderFooterPrimary).Range.Font.Size = 9
         '.Headers(1).Range.ParagraphFormat.Borders(3).LineStyle = wdLineStyleNone
     End With
-    MsgBox "Íê³É£¡"
+    MsgBox "å®Œæˆï¼"
 End Sub
 
 
-Sub ²åÈë½Å×¢()
+Sub æ’å…¥è„šæ³¨()
     With Selection
         With .FootnoteOptions
             .Location = wdBottomOfPage
@@ -324,9 +323,9 @@ Sub ²åÈë½Å×¢()
         End With
         .Font.Size = 10.5
         .ParagraphFormat.Alignment = 3
-        .ParagraphFormat.LineSpacingRule = pbLineSpacingSingle 'µ¥±¶ĞĞ¾à
-        .ParagraphFormat.LineUnitBefore = 0 '¶ÎÇ°¾à
-        .ParagraphFormat.LineUnitAfter = 0 '¶Îºó¾à
+        .ParagraphFormat.LineSpacingRule = pbLineSpacingSingle 'å•å€è¡Œè·
+        .ParagraphFormat.LineUnitBefore = 0 'æ®µå‰è·
+        .ParagraphFormat.LineUnitAfter = 0 'æ®µåè·
         Set myRange = ActiveDocument.Sections(1).Range
     If myRange.Footnotes.NumberingRule = wdRestartSection Then
         myRange.Footnotes.NumberingRule = wdRestartPage
@@ -335,20 +334,20 @@ Sub ²åÈë½Å×¢()
     End With
 End Sub
 
-Sub ÖĞÎÄÕÂ±êÌâ()
+Sub ä¸­æ–‡ç« æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 1").Font
-        .NameFarEast = "ºÚÌå"
-        .Name = "ºÚÌå"
+    With ActiveDocument.Styles("æ ‡é¢˜ 1").Font
+        .NameFarEast = "é»‘ä½“"
+        .Name = "é»‘ä½“"
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Size = 15
         .Bold = False
     End With
-    With ActiveDocument.Styles("±êÌâ 1").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 1").ParagraphFormat
         .SpaceBefore = 24
         .SpaceBeforeAuto = False
         .SpaceAfter = 18
@@ -359,27 +358,27 @@ Sub ÖĞÎÄÕÂ±êÌâ()
         .LineUnitAfter = 1
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 1")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 1")
     Selection.HomeKey unit:=wdLine
     Selection.InsertBreak Type:=wdPageBreak
 End Sub
 
 
 
-Sub ÖĞÎÄÒ»¼¶±êÌâ()
+Sub ä¸­æ–‡ä¸€çº§æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 2").Font
-        .NameFarEast = "ºÚÌå"
-        .Name = "ºÚÌå"
+    With ActiveDocument.Styles("æ ‡é¢˜ 2").Font
+        .NameFarEast = "é»‘ä½“"
+        .Name = "é»‘ä½“"
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Size = 14
         .Bold = False
     End With
-    With ActiveDocument.Styles("±êÌâ 2").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 2").ParagraphFormat
         .SpaceBefore = 18
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
@@ -390,23 +389,23 @@ Sub ÖĞÎÄÒ»¼¶±êÌâ()
         .LineUnitAfter = 1
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 2")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 2")
 End Sub
 
-Sub ÖĞÎÄ¶ş¼¶±êÌâ()
+Sub ä¸­æ–‡äºŒçº§æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 3").Font
-        .NameFarEast = "ºÚÌå"
-        .Name = "ºÚÌå"
+    With ActiveDocument.Styles("æ ‡é¢˜ 3").Font
+        .NameFarEast = "é»‘ä½“"
+        .Name = "é»‘ä½“"
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Size = 14
         .Bold = False
     End With
-    With ActiveDocument.Styles("±êÌâ 3").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 3").ParagraphFormat
         .SpaceBefore = 12
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
@@ -417,23 +416,23 @@ Sub ÖĞÎÄ¶ş¼¶±êÌâ()
         .LineUnitAfter = 1
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 3")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 3")
 End Sub
 
-Sub ÖĞÎÄÈı¼¶±êÌâ()
+Sub ä¸­æ–‡ä¸‰çº§æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 4").Font
-        .NameFarEast = "ºÚÌå"
-        .Name = "ºÚÌå"
+    With ActiveDocument.Styles("æ ‡é¢˜ 4").Font
+        .NameFarEast = "é»‘ä½“"
+        .Name = "é»‘ä½“"
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Size = 12
         .Bold = False
     End With
-    With ActiveDocument.Styles("±êÌâ 4").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 4").ParagraphFormat
         .SpaceBefore = 12
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
@@ -444,22 +443,22 @@ Sub ÖĞÎÄÈı¼¶±êÌâ()
         .LineUnitAfter = 0.5
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 4")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 4")
 End Sub
 
-Sub Ó¢ÎÄÕÂ±êÌâ()
+Sub è‹±æ–‡ç« æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 1").Font
+    With ActiveDocument.Styles("æ ‡é¢˜ 1").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Name = "Times New Roman"
         .Size = 15
         .Bold = True
     End With
-    With ActiveDocument.Styles("±êÌâ 1").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 1").ParagraphFormat
         .SpaceBefore = 24
         .SpaceBeforeAuto = False
         .SpaceAfter = 18
@@ -470,24 +469,24 @@ Sub Ó¢ÎÄÕÂ±êÌâ()
         .LineUnitAfter = 1
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 1")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 1")
     Selection.HomeKey unit:=wdLine
     Selection.InsertBreak Type:=wdPageBreak
 End Sub
 
-Sub Ó¢ÎÄÒ»¼¶±êÌâ()
+Sub è‹±æ–‡ä¸€çº§æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 2").Font
+    With ActiveDocument.Styles("æ ‡é¢˜ 2").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Name = "Times New Roman"
         .Size = 14
         .Bold = True
     End With
-    With ActiveDocument.Styles("±êÌâ 2").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 2").ParagraphFormat
         .SpaceBefore = 18
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
@@ -498,23 +497,23 @@ Sub Ó¢ÎÄÒ»¼¶±êÌâ()
         .LineUnitAfter = 1
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 2")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 2")
 End Sub
 
 
-Sub Ó¢ÎÄ¶ş¼¶±êÌâ()
+Sub è‹±æ–‡äºŒçº§æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 3").Font
+    With ActiveDocument.Styles("æ ‡é¢˜ 3").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Name = "Times New Roman"
         .Size = 14
         .Bold = True
     End With
-    With ActiveDocument.Styles("±êÌâ 3").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 3").ParagraphFormat
         .SpaceBefore = 12
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
@@ -525,23 +524,23 @@ Sub Ó¢ÎÄ¶ş¼¶±êÌâ()
         .LineUnitAfter = 1
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 3")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 3")
 End Sub
 
 
-Sub Ó¢ÎÄÈı¼¶±êÌâ()
+Sub è‹±æ–‡ä¸‰çº§æ ‡é¢˜()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    With ActiveDocument.Styles("±êÌâ 4").Font
+    With ActiveDocument.Styles("æ ‡é¢˜ 4").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
         .Name = "Times New Roman"
         .Size = 12
         .Bold = True
     End With
-    With ActiveDocument.Styles("±êÌâ 4").ParagraphFormat
+    With ActiveDocument.Styles("æ ‡é¢˜ 4").ParagraphFormat
         .SpaceBefore = 12
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
@@ -552,17 +551,17 @@ Sub Ó¢ÎÄÈı¼¶±êÌâ()
         .LineUnitAfter = 0.5
     End With
     Selection.ClearFormatting
-    Selection.Style = ActiveDocument.Styles("±êÌâ 4")
+    Selection.Style = ActiveDocument.Styles("æ ‡é¢˜ 4")
 End Sub
 
 
-Sub ÕªÒª()
+Sub æ‘˜è¦()
     If Selection.Type <> wdSelectionNormal Then
-        MsgBox "ÇëÑ¡¶¨ÇøÓò£¡"
+        MsgBox "è¯·é€‰å®šåŒºåŸŸï¼"
         Exit Sub
     End If
-    Selection.Style = ActiveDocument.Styles("ÕıÎÄ")
-    Selection.Font.Name = "ËÎÌå"
+    Selection.Style = ActiveDocument.Styles("æ­£æ–‡")
+    Selection.Font.Name = "å®‹ä½“"
     Selection.Font.NameAscii = "Times New Roman"
     Selection.Font.Size = 10.5
     Selection.Font.Bold = False
