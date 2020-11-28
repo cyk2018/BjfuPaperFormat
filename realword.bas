@@ -1,4 +1,37 @@
 Attribute VB_Name = "realword"
+Sub 参考文献_正文()
+    If Selection.Type <> wdSelectionNormal Then
+        MsgBox "请选定区域！"
+        Exit Sub
+    End If
+    Selection.Font.Name = "宋体"
+    Selection.Font.Size = 10.5
+    Selection.Font.NameFarEast = "宋体"
+    Selection.Font.NameAscii = "Times New Roman"
+    Selection.Font.NameOther = "Times New Roman"
+    
+     
+    Selection.Font.Bold = False
+    With Selection.ParagraphFormat
+        
+        .LeftIndent = CentimetersToPoints(0.74) '左缩进bai为0
+        .CharacterUnitLeftIndent = 0
+        
+         
+        .Alignment = 3
+        .SpaceBefore = 0
+        .SpaceBeforeAuto = False
+        .SpaceAfter = 0
+        .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceSingle
+        .LineUnitBefore = 0
+        .LineUnitAfter = 0
+        .CharacterUnitFirstLineIndent = 0
+        .FirstLineIndent = CentimetersToPoints(0)
+    End With
+    Selection.Paragraphs.FirstLineIndent = _
+    InchesToPoints(-0.29)
+End Sub
 Sub 插入分节符()
     Selection.InsertBreak Type:=wdSectionBreakNextPage
 End Sub
