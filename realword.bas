@@ -1,4 +1,10 @@
 Attribute VB_Name = "realword"
+Sub 插入分节符()
+    Selection.InsertBreak Type:=wdSectionBreakNextPage
+End Sub
+Sub 插入分页符()
+ Selection.InsertBreak Type:=wdPageBreak
+End Sub
 Sub 中文全文表格设置()
     Dim tbs As Tables, tb As Table
     Set tbs = ActiveDocument.Tables
@@ -154,39 +160,69 @@ response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13
         Exit Sub
     End If
 
-    Selection.WholeStory '设置页边距
+
+    Selection.WholeStory
     With ActiveDocument.PageSetup
         .TopMargin = CentimetersToPoints(3)
         .BottomMargin = CentimetersToPoints(3)
         .LeftMargin = CentimetersToPoints(3)
         .RightMargin = CentimetersToPoints(3)
     End With
+   
+    
     Selection.ParagraphFormat.LineSpacingRule = wdLineSpace1pt5
-
-    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader '设置页眉
+    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader
+  
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
     Selection.Delete
-    Selection.TypeText Text:="电子科技大学学士学位论文"
+    Selection.TypeText Text:="电子科技大学学士学位论文 "
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
     Selection.Font.Name = "宋体"
     Selection.Font.Size = 10.5
+   
 
-ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageFooter
+    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageFooter
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
-    Selection.Delete '进行更新删除
+    Selection.Delete
     Selection.TypeText Text:=""
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
     Selection.Font.Name = "宋体"
     Selection.Font.Size = 10.5
     
-    Selection.PageSetup.HeaderDistance = 56.6 ' 设置页眉到页面底边的距离
+    Selection.PageSetup.HeaderDistance = 56.6
     Selection.PageSetup.FooterDistance = 56.6 ' 设置页脚到页面底边的距离
     ActiveWindow.ActivePane.View.SeekView = wdSeekMainDocument
     Selection.HomeKey
+     Dim oWord As Word.Application
+    Set oWord = Word.Application
+    Dim oDoc As Document
+    Dim oSec As Section
+    Dim oFoot As HeaderFooter
+    Dim oHead As HeaderFooter
+    Set oDoc = oWord.ActiveDocument
+     With oDoc
+        'iCount = .BuiltInDocumentProperties(wdPropertyPages)
+        iCount = .Sections.Count
+        For i = 1 To iCount
+            Set oSec = .Sections(i)
+            With oSec
+             
+                '页眉
+                Set oHead = .Headers(wdHeaderFooterPrimary)
+                '页脚
+                Set oFoot = .Footers(wdHeaderFooterPrimary)
+                '页眉取消链接到前一节
+                oHead.LinkToPrevious = False
+                '页脚到前一节
+                oFoot.LinkToPrevious = False
+            
+            End With
+        Next i
+    End With
     MsgBox "完成！"
 End Sub
 
@@ -583,6 +619,7 @@ Sub 创建文档还原点()
     savename = timenow & myname & endformat
     fpath = ActiveDocument.Path
     ActiveDocument.SaveAs2 fpath & "\" & savename
+    ActiveDocument.Close
 Documents.Open (fpath & "\" & FName)
     MsgBox "完成！" & Chr(13) & "还原点位于该文档所在文件夹"
     Exit Sub
