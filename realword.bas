@@ -6,6 +6,10 @@ Sub 插入分页符()
  Selection.InsertBreak Type:=wdPageBreak
 End Sub
 Sub 中文全文表格设置()
+    response = MsgBox("【重要提示】" & Chr(13) & "确认对全文所有表格进行设置吗？" & Chr(13) & "（包括 1 x 1 表格）", buttons:=vbOKCancel + vbDefaultButton2)
+    If response <> 1 Then
+        Exit Sub
+    End If
     Dim tbs As Tables, tb As Table
     Set tbs = ActiveDocument.Tables
     n = tbs.Count
@@ -49,7 +53,46 @@ Sub 中文全文表格设置()
     Next i
     MsgBox "请手动输入标题"
 End Sub
+Sub 中文选中表格设置()
+    '选中表格说明此属性为5
+    If Selection.Type <> 5 Then
+        MsgBox "当前尚未选中表格"
+        Exit Sub
+    End If
+    '设置内外边框
+        Selection.Borders.InsideLineStyle = wdLineStyleSingle
+        Selection.Borders.InsideLineWidth = wdLineWidth050pt
+        Selection.Borders.OutsideLineStyle = wdLineStyleSingle
+        Selection.Borders.OutsideLineWidth = wdLineWidth050pt
+        
+        Selection.Style.Font.Name = "宋体"
+        Selection.Style.Font.Size = 10.5
+        Selection.Style.Font.NameAscii = "Times New Roman"
+        
+        
+        '标题设置
+        
+        Selection.MoveLeft Count:=2
+        tabletitle = Chr(13) & "表 " & "x-x 请输入标题"
+        Selection.TypeText tabletitle
+        'tb.Title = tabletitle
+        Selection.MoveUp unit:=wdParagraph, Count:=1, Extend:=wdExtend
+        Selection.ClearFormatting
+        
+        '表题采用宋体五号
+        Selection.Font.Name = "宋体"
+        Selection.Font.Size = 10.5
+        Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        Selection.ParagraphFormat.SpaceBefore = 12
+        Selection.ParagraphFormat.SpaceAfter = 6
+        Selection.Font.Bold = False
+    MsgBox "请手动输入标题"
+End Sub
 Sub 英文全文表格设置()
+    response = MsgBox("【重要提示】" & Chr(13) & "确认对全文所有表格进行设置吗？" & Chr(13) & "（包括 1 x 1 表格）", buttons:=vbOKCancel + vbDefaultButton2)
+    If response <> 1 Then
+        Exit Sub
+    End If
     Dim tbs As Tables, tb As Table
     Set tbs = ActiveDocument.Tables
     n = tbs.Count
@@ -94,8 +137,47 @@ Sub 英文全文表格设置()
     Next i
     MsgBox "Please enter the title manually"
 End Sub
+Sub 英文选中表格设置()
+    '选中表格说明此属性为5
+    If Selection.Type <> 5 Then
+        MsgBox "当前尚未选中表格"
+        Exit Sub
+    End If
+    '设置内外边框
+        Selection.Borders.InsideLineStyle = wdLineStyleSingle
+        Selection.Borders.InsideLineWidth = wdLineWidth050pt
+        Selection.Borders.OutsideLineStyle = wdLineStyleSingle
+        Selection.Borders.OutsideLineWidth = wdLineWidth050pt
+        
+        Selection.Style.Font.Name = "宋体"
+        Selection.Style.Font.Size = 10.5
+        Selection.Style.Font.NameAscii = "Times New Roman"
+        
+        
+        '标题设置
+        
+        Selection.MoveLeft Count:=2
+        tabletitle = Chr(13) & "Table" & " x-x Please input the title"
+        Selection.TypeText tabletitle
+        'tb.Title = tabletitle
+        Selection.MoveUp unit:=wdParagraph, Count:=1, Extend:=wdExtend
+        Selection.ClearFormatting
+        
+        Selection.Font.Name = "Times New Roman"
+        Selection.Font.Size = 10.5
+        Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        Selection.Font.Bold = False
+        
+        Selection.ParagraphFormat.SpaceBefore = 12
+        Selection.ParagraphFormat.SpaceAfter = 6
+    MsgBox "请手动输入标题"
+End Sub
 
 Sub 中文全文图片设置()
+    response = MsgBox("【重要提示】" & Chr(13) & "确认对全文所有表格进行设置吗？" & Chr(13) & "（可能包括公式中的图片）", buttons:=vbOKCancel + vbDefaultButton2)
+    If response <> 1 Then
+        Exit Sub
+    End If
     Dim pics As InlineShapes, pic As InlineShape
     Set pics = ActiveDocument.InlineShapes
     n = pics.Count
@@ -121,7 +203,34 @@ Sub 中文全文图片设置()
     Next i
     MsgBox "请手动输入标题"
 End Sub
+Sub 中文选中图片设置()
+    '选中表格说明此属性为5
+    If Selection.Type = wdSelectionShape Or Selection.Type = wdSelectionShape Then
+        MsgBox "当前尚未选中图片"
+        Exit Sub
+    End If
+    Selection.MoveRight Count:=1
+            Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        
+            'Selection.MoveRight
+            pictitle = Chr(13) & "图 x-x" & " 请输入标题"
+            Selection.TypeText pictitle
+            'pic.Title = pictitle
+            Selection.ClearFormatting
+            Selection.Font.Name = "宋体"
+            Selection.Font.Size = 10.5
+            Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+            
+            Selection.ParagraphFormat.SpaceBefore = 6
+            Selection.ParagraphFormat.SpaceAfter = 12
+End Sub
+
+
 Sub 英文全文图片设置()
+    response = MsgBox("【重要提示】" & Chr(13) & "确认对全文所有表格进行设置吗？" & Chr(13) & "（可能包括公式中的图片）", buttons:=vbOKCancel + vbDefaultButton2)
+    If response <> 1 Then
+        Exit Sub
+    End If
     Dim pics As InlineShapes, pic As InlineShape
     Set pics = ActiveDocument.InlineShapes
     n = pics.Count
@@ -147,6 +256,29 @@ Sub 英文全文图片设置()
     Next i
     MsgBox "Please enter the title manually"
 End Sub
+
+Sub 英文选中图片设置()
+    '选中表格说明此属性为5
+    If Selection.Type = wdSelectionShape Or Selection.Type = wdSelectionShape Then
+        MsgBox "当前尚未选中图片"
+        Exit Sub
+    End If
+    Selection.MoveRight Count:=1
+            Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        
+            'Selection.MoveDown unit:=wdParagraph, Count:=1, Extend:=wdExtend
+            pictitle = Chr(13) & "Figure x-x" & " Please input the title"
+            Selection.TypeText pictitle
+            'pic.Title = pictitle
+            Selection.ClearFormatting
+            Selection.Font.Name = "Times New Roman"
+            Selection.Font.Size = 10.5
+            Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+            
+            Selection.ParagraphFormat.SpaceBefore = 6
+            Selection.ParagraphFormat.SpaceAfter = 12
+End Sub
+
 
 
 Sub 全文页边距和页眉_页脚格式()
