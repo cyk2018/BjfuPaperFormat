@@ -22,7 +22,7 @@
                     <mso:button idQ="x3:英文三级标题_7_1695A05F" label="英文三级标题" imageMso="ShapesDuplicate" onAction="英文三级标题" visible="true"/>
                 </mso:group>
                 <mso:group id="mso_c3.16862368" label="页码和脚注" imageMso="ShapesDuplicate" autoScale="true">
-                    <mso:button idQ="x3:生成页码​​​​_10_1695A05F" label="生成页码​​" imageMso="SlidesPerPageSlideOutline" onAction="生成页码​​" visible="true"/>
+                    <mso:button idQ="x3:生成页码​​​​_10_1695A05F" label="生成页码​​" imageMso="SlidesPerPageSlideOutline" onAction="create_number​​" visible="true"/>
                      <mso:button idQ="x3:插入脚注_27_1695A05F" label="插入脚注" imageMso="ShowClipboard" onAction="插入脚注" visible="true"/>
                 </mso:group>
                 <mso:group id="mso_c6.16865B80" label="格式设置" imageMso="FrontPageToggleBookmark" autoScale="true">
@@ -44,6 +44,7 @@
                 <mso:group id="mso_c10.168E92C5" label="表格设置​​" imageMso="BlackAndWhite" autoScale="true">
                     <mso:button idQ="x3:中文全文表格设置_20_1695A05F" label="中文全文表格设置" imageMso="OutlineSubtotals" onAction="中文全文表格设置" visible="true"/>
                     <mso:button idQ="x3:英文全文表格设置_0_16D072E8" label="英文全文表格设置" imageMso="CharacterShading" onAction="英文全文表格设置" visible="true"/>
+					
                 </mso:group>
                 <mso:group id="mso_c15.16929419" label="图片设置" imageMso="SignatureShow" autoScale="true">
                     <mso:button idQ="x3:中文全文图片设置_1_1A9F8BF7" label="中文全文图片设置" imageMso="OutlineSubtotals" onAction="中文全文图片设置" visible="true"/>

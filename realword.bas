@@ -361,7 +361,7 @@ Sub 正文_英文()
     End With
 End Sub
 
-Sub 生成页码()
+Sub create_number()
     response = MsgBox("【重要提示】" & Chr(13) & "请确保光标位于第一章的一级标题前" & Chr(13) & "再点击[确定]  否则点击[取消]", buttons:=vbOKCancel + vbDefaultButton2)
     If response = 1 Then
         response = MsgBox("【再次确认】" & Chr(13) & "我确认光标位于正确位置", buttons:=vbOKCancel + vbDefaultButton2)
