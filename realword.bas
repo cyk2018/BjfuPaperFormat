@@ -254,8 +254,8 @@ response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13
      With oDoc
         'iCount = .BuiltInDocumentProperties(wdPropertyPages)
         iCount = .Sections.Count
-        For I = 1 To iCount
-            Set oSec = .Sections(I)
+        For i = 1 To iCount
+            Set oSec = .Sections(i)
             With oSec
              
                 '页眉
@@ -268,7 +268,7 @@ response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13
                 oFoot.LinkToPrevious = False
             
             End With
-        Next I
+        Next i
     End With
     MsgBox "完成！"
 End Sub
@@ -744,20 +744,6 @@ Sub 英文三级标题()
 End Sub
 
 
-Sub 摘要()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
-    Selection.Style = ActiveDocument.Styles("正文")
-    Selection.Font.Name = "宋体"
-    Selection.Font.NameAscii = "Times New Roman"
-    Selection.Font.Size = 10.5
-    Selection.Font.Bold = False
-    Selection.ParagraphFormat.CharacterUnitFirstLineIndent = 2
-    Selection.EndKey
-    Selection.TypeText Chr(13)
-End Sub
 
 Sub 目录()
     Set myRange = ActiveDocument.Range(Start:=0, End:=0)
@@ -790,3 +776,111 @@ msg:
     MsgBox "出了点问题，请检查后重试  >_<", Title:="Error", buttons:=vbCritical
 End Sub
 
+Sub 摘要()
+    With ActiveDocument.Styles("正文").Font
+        .NameFarEast = "宋体"
+        .Name = "宋体"
+        .NameAscii = "Times New Roman"
+        .NameOther = "Times New Roman"
+        .Size = 12
+        .Bold = False
+    End With
+    With ActiveDocument.Styles("正文").ParagraphFormat
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
+        .CharacterUnitFirstLineIndent = 2
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
+     .Extend
+    End With
+    Selection.ClearFormatting
+    Selection.Style = ActiveDocument.Styles("正文")
+End Sub
+
+Sub 关键词内容()
+    If Selection.Type <> wdSelectionNormal Then
+        MsgBox "请选定区域！"
+        Exit Sub
+    End If
+    With ActiveDocument.Styles("正文").Font
+        .NameFarEast = "宋体"
+        .Name = "宋体"
+        .NameAscii = "Times New Roman"
+        .NameOther = "Times New Roman"
+        .Size = 12
+        .Bold = False
+    End With
+    With ActiveDocument.Styles("正文").ParagraphFormat
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
+        .CharacterUnitFirstLineIndent = 2
+    End With
+    Selection.ClearFormatting
+    Selection.Style = ActiveDocument.Styles("正文")
+    Selection.ParagraphFormat.TabHangingIndent (4)
+End Sub
+
+Sub 摘要标题()
+    With ActiveDocument.Styles("标题 1").Font
+        .NameFarEast = "黑体"
+        .Name = "黑体"
+        .NameAscii = "Times New Roman"
+        .NameOther = "Times New Roman"
+        .Size = 15
+        .Bold = False
+    End With
+    With ActiveDocument.Styles("标题 1").ParagraphFormat
+        .SpaceBefore = 24
+        .SpaceBeforeAuto = False
+        .SpaceAfter = 18
+        .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
+        .Alignment = wdAlignParagraphCenter
+        .LineUnitBefore = 0
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
+    End With
+    Selection.ClearFormatting
+    Selection.Style = ActiveDocument.Styles("标题 1")
+End Sub
+
+Sub 关键字标题()
+    If Selection.Type <> wdSelectionNormal Then
+        MsgBox "请选定区域！"
+        Exit Sub
+    End If
+    With ActiveDocument.Styles("正文").Font
+        .NameFarEast = "宋体"
+        .Name = "宋体"
+        .NameAscii = "Times New Roman"
+        .NameOther = "Times New Roman"
+        .Size = 12
+        .Bold = False
+    End With
+    With ActiveDocument.Styles("正文").ParagraphFormat
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
+        .CharacterUnitFirstLineIndent = 2
+    End With
+    Selection.ClearFormatting
+    Selection.Style = ActiveDocument.Styles("正文")
+    Selection.Font.Bold = True
+End Sub
