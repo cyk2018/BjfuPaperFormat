@@ -504,10 +504,6 @@ Sub 插入脚注()
 End Sub
 
 Sub 中文章标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 1").Font
         .NameFarEast = "黑体"
         .Name = "黑体"
@@ -521,24 +517,33 @@ Sub 中文章标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 18
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphCenter
         .LineUnitBefore = 0
-        .LineUnitAfter = 1
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 1")
-    Selection.HomeKey unit:=wdLine
-    Selection.InsertBreak Type:=wdPageBreak
-End Sub
-
-
-
-Sub 中文一级标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
     End If
+End Sub
+Sub 中文一级标题()
     With ActiveDocument.Styles("标题 2").Font
         .NameFarEast = "黑体"
         .Name = "黑体"
@@ -552,20 +557,34 @@ Sub 中文一级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
-        .LineUnitAfter = 1
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 2")
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 Sub 中文二级标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 3").Font
         .NameFarEast = "黑体"
         .Name = "黑体"
@@ -579,20 +598,34 @@ Sub 中文二级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
-        .LineUnitAfter = 1
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 3")
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 Sub 中文三级标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 4").Font
         .NameFarEast = "黑体"
         .Name = "黑体"
@@ -606,20 +639,34 @@ Sub 中文三级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
-        .LineUnitBefore = 0.5
-        .LineUnitAfter = 0.5
+        .LineUnitBefore = 0
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 4")
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 Sub 英文章标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 1").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
@@ -632,22 +679,34 @@ Sub 英文章标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 18
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphCenter
         .LineUnitBefore = 0
-        .LineUnitAfter = 1
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 1")
-    Selection.HomeKey unit:=wdLine
-    Selection.InsertBreak Type:=wdPageBreak
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 Sub 英文一级标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 2").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
@@ -660,21 +719,35 @@ Sub 英文一级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
-        .LineUnitAfter = 1
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 2")
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 
 Sub 英文二级标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 3").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
@@ -687,21 +760,35 @@ Sub 英文二级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
         .LineUnitBefore = 0
-        .LineUnitAfter = 1
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 3")
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 
 Sub 英文三级标题()
-    If Selection.Type <> wdSelectionNormal Then
-        MsgBox "请选定区域！"
-        Exit Sub
-    End If
     With ActiveDocument.Styles("标题 4").Font
         .NameAscii = "Times New Roman"
         .NameOther = "Times New Roman"
@@ -714,13 +801,31 @@ Sub 英文三级标题()
         .SpaceBeforeAuto = False
         .SpaceAfter = 6
         .SpaceAfterAuto = False
-        .LineSpacingRule = wdLineSpace1pt5
+        .LineSpacingRule = wdLineSpaceExactly
+        .LineSpacing = 20
         .Alignment = wdAlignParagraphLeft
-        .LineUnitBefore = 0.5
-        .LineUnitAfter = 0.5
+        .LineUnitBefore = 0
+        .LineUnitAfter = 0
+    End With
+    With Selection
+     ' Collapse current selection to insertion point.
+     .Collapse
+     ' Turn extend mode on.
+     .Extend
+     ' Extend selection to word.
+     .Extend
+     ' Extend selection to sentence.
+     .Extend
     End With
     Selection.ClearFormatting
     Selection.Style = ActiveDocument.Styles("标题 4")
+    Selection.GoToPrevious (wdGoToLine)
+    If Selection.Style.NameLocal = "标题 1" Or Selection.Style.NameLocal = "标题 2" Or Selection.Style.NameLocal = "标题 3" Or Selection.Style.NameLocal = "标题 4" Then
+        Selection.GoToNext (wdGoToLine)
+        Selection.ParagraphFormat.SpaceBefore = 0
+    Else
+        Selection.GoToNext (wdGoToLine)
+    End If
 End Sub
 
 
@@ -738,6 +843,17 @@ Sub 摘要()
     Selection.EndKey
     Selection.TypeText Chr(13)
 End Sub
+
+Sub 目录()
+    Set myRange = ActiveDocument.Range(Start:=0, End:=0)
+    ActiveDocument.TablesOfContents.Add Range:=myRange, _
+    UseFields:=False, UseHeadingStyles:=True, _
+    LowerHeadingLevel:=4, _
+    UpperHeadingLevel:=1, _
+    UseHyperlinks:=True
+End Sub
+
+
 Sub 创建文档还原点()
     On Error GoTo msg
     ActiveDocument.Save
