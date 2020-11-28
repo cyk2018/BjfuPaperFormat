@@ -1,4 +1,37 @@
 Attribute VB_Name = "realword"
+Sub 参考文献_正文()
+    If Selection.Type <> wdSelectionNormal Then
+        MsgBox "请选定区域！"
+        Exit Sub
+    End If
+    Selection.Font.Name = "宋体"
+    Selection.Font.Size = 10.5
+    Selection.Font.NameFarEast = "宋体"
+    Selection.Font.NameAscii = "Times New Roman"
+    Selection.Font.NameOther = "Times New Roman"
+    
+     
+    Selection.Font.Bold = False
+    With Selection.ParagraphFormat
+        
+        .LeftIndent = CentimetersToPoints(0.74) '左缩进bai为0
+        .CharacterUnitLeftIndent = 0
+        
+         
+        .Alignment = 3
+        .SpaceBefore = 0
+        .SpaceBeforeAuto = False
+        .SpaceAfter = 0
+        .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceSingle
+        .LineUnitBefore = 0
+        .LineUnitAfter = 0
+        .CharacterUnitFirstLineIndent = 0
+        .FirstLineIndent = CentimetersToPoints(0)
+    End With
+    Selection.Paragraphs.FirstLineIndent = _
+    InchesToPoints(-0.29)
+End Sub
 Sub 插入分节符()
     Selection.InsertBreak Type:=wdSectionBreakNextPage
 End Sub
@@ -281,7 +314,7 @@ End Sub
 
 
 
-Sub 全文页边距和页眉_页脚格式()
+Sub 全文页边距和页眉()
 response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13) & "请谨慎点击确定", buttons:=vbOKCancel + vbDefaultButton2)
     If response = 1 Then
         response = MsgBox("【再次确认】" & Chr(13) & "你确定修改吗？", buttons:=vbOKCancel + vbDefaultButton2)
@@ -300,21 +333,35 @@ response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13
         .LeftMargin = CentimetersToPoints(3)
         .RightMargin = CentimetersToPoints(3)
     End With
-   
+       Dim oSection As Section
+    For Each oSection In Word.ActiveDocument.Sections
+        With oSection.PageSetup
+            .DifferentFirstPageHeaderFooter = False
+            .OddAndEvenPagesHeaderFooter = True
+        End With
+    Next
     
     Selection.ParagraphFormat.LineSpacingRule = wdLineSpace1pt5
     ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader
-  
+    
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
     Selection.Delete
-    Selection.TypeText Text:="电子科技大学学士学位论文 "
+    Selection.TypeText Text:="本章标题"
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
     Selection.Font.Name = "宋体"
     Selection.Font.Size = 10.5
-   
-
+    ActiveWindow.ActivePane.View.SeekView = wdSeekEvenPagesHeader
+    Selection.HomeKey unit:=wdLine
+    Selection.EndKey unit:=wdLine, Extend:=wdExtend
+    Selection.Delete
+    Selection.TypeText Text:="电子科技大学学士学位论文"
+    Selection.HomeKey unit:=wdLine
+    Selection.EndKey unit:=wdLine, Extend:=wdExtend
+    Selection.Font.Name = "宋体"
+    Selection.Font.Size = 10.5
+    
     ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageFooter
     Selection.HomeKey unit:=wdLine
     Selection.EndKey unit:=wdLine, Extend:=wdExtend
@@ -339,8 +386,8 @@ response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13
      With oDoc
         'iCount = .BuiltInDocumentProperties(wdPropertyPages)
         iCount = .Sections.Count
-        For i = 1 To iCount
-            Set oSec = .Sections(i)
+        For I = 1 To iCount
+            Set oSec = .Sections(I)
             With oSec
              
                 '页眉
@@ -353,7 +400,7 @@ response = MsgBox("【重要提示】" & Chr(13) & "确认后会覆盖已修改的页眉" & Chr(13
                 oFoot.LinkToPrevious = False
             
             End With
-        Next i
+        Next I
     End With
     MsgBox "完成！"
 End Sub

@@ -21,19 +21,20 @@
                     <mso:button idQ="x3:英文二级标题_6_1695A05F" label="英文二级标题" imageMso="ChangeBinding" onAction="英文二级标题" visible="true"/>
                     <mso:button idQ="x3:英文三级标题_7_1695A05F" label="英文三级标题" imageMso="ShapesDuplicate" onAction="英文三级标题" visible="true"/>
                 </mso:group>
-                <mso:group id="mso_c3.16862368" label="页码" imageMso="ShapesDuplicate" autoScale="true">
+                <mso:group id="mso_c3.16862368" label="页码和脚注" imageMso="ShapesDuplicate" autoScale="true">
                     <mso:button idQ="x3:生成页码​​​​_10_1695A05F" label="生成页码​​" imageMso="SlidesPerPageSlideOutline" onAction="生成页码​​" visible="true"/>
+                     <mso:button idQ="x3:插入脚注_27_1695A05F" label="插入脚注" imageMso="ShowClipboard" onAction="插入脚注" visible="true"/>
                 </mso:group>
                 <mso:group id="mso_c6.16865B80" label="格式设置" imageMso="FrontPageToggleBookmark" autoScale="true">
-                    <mso:button idQ="x3:全文页边距和页眉_页脚格式_14_1695A05F" label="全文页边距和页眉_页脚格式" imageMso="AppointmentColor9" onAction="全文页边距和页眉_页脚格式" visible="true"/>
-                    <mso:button idQ="x3:英文数字_页眉格式_15_1695A05F" label="英文数字_页眉格式" imageMso="FrameCreateLeft" onAction="英文数字_页眉格式" visible="true"/>
-                    <mso:button idQ="x3:全文英文使用新罗马字体_16_1695A05F" label="全文英文使用新罗马字体" imageMso="ViewDisplayInHighContrast" onAction="全文英文使用新罗马字体" visible="true"/>
-                    <mso:button idQ="x3:正文_中文_17_1695A05F" label="正文_中文" imageMso="AppointmentColor10" onAction="正文_中文" visible="true"/>
-                    <mso:button idQ="x3:正文_英文_18_1695A05F" label="正文_英文" imageMso="FrameCreateRight" onAction="正文_英文" visible="true"/>
+                    <mso:button idQ="x3:全文页边距和页眉_页脚格式_14_1695A05F" label="设置全文页边距和页眉、页脚格式" imageMso="AppointmentColor9" onAction="全文页边距和页眉_页脚格式" visible="true"/>
+                    <mso:button idQ="x3:英文数字_页眉格式_15_1695A05F" label="设置英文数字的页眉格式" imageMso="FrameCreateLeft" onAction="英文数字_页眉格式" visible="true"/>
+                    <mso:button idQ="x3:全文英文使用新罗马字体_16_1695A05F" label="全部英文字体变成新罗马字体" imageMso="ViewDisplayInHighContrast" onAction="全文英文使用新罗马字体" visible="true"/>
+                    <mso:button idQ="x3:正文_中文_17_1695A05F" label="使用中文正文" imageMso="AppointmentColor10" onAction="正文_中文" visible="true"/>
+                    <mso:button idQ="x3:正文_英文_18_1695A05F" label="使用英文正文" imageMso="FrameCreateRight" onAction="正文_英文" visible="true"/>
                 </mso:group>
-                <mso:group id="mso_c11.168FF488" label="摘要和脚注设置" imageMso="TableBorderPenColorPicker" autoScale="true">
-                    <mso:button idQ="x3:摘要_0_1A9F8BF7" label="摘要" imageMso="SlidesPerPageSlideOutline" onAction="摘要" visible="true"/>
-                    <mso:button idQ="x3:插入脚注_27_1695A05F" label="插入脚注" imageMso="ShowClipboard" onAction="插入脚注" visible="true"/>
+                <mso:group id="mso_c11.168FF488" label="摘要和参考文献" imageMso="TableBorderPenColorPicker" autoScale="true">
+                    <mso:button idQ="x3:摘要_0_1A9F8BF7" label="设置摘要格式" imageMso="SlidesPerPageSlideOutline" onAction="摘要" visible="true"/>
+                    <mso:button idQ="x3:参考文献——正文​​​​_10_1695A05F" label="调整正文参考文献格式​​" imageMso="CharacterShading" onAction="参考文献_正文​​" visible="true"/>
                 </mso:group>
                 <mso:group id="mso_c1.16EA5F90" label="创建文档还原点" imageMso="AddressBook" autoScale="true">
                     <mso:button idQ="x3:创建文档还原点_0_176127E3" label="创建文档还原点" imageMso="AddressBook" onAction="创建文档还原点" visible="true"/>
